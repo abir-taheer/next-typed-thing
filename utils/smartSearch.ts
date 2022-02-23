@@ -5,7 +5,7 @@ import {
   ModelStatic,
   Op,
   WhereOptions,
-} from 'sequelize';
+} from "sequelize";
 
 // Every model has an id so we're going to add that as a constraint to the type
 interface StandardModel extends Model {
@@ -27,7 +27,7 @@ interface CustomIncludeOptions extends IncludeOptions {
   queryFields?: string[];
 }
 
-interface FindOptionsWithCustomInclude extends Omit<FindOptions, 'include'> {
+interface FindOptionsWithCustomInclude extends Omit<FindOptions, "include"> {
   include?: CustomIncludeOptions[];
 }
 
@@ -61,7 +61,7 @@ async function smartSearch<SpecificModel extends StandardModel>({
         // Keep everything lowercase for consistency
         .toLowerCase()
         // Remove any non-alphanumeric characters from search keywords
-        .replace(/[^a-z0-9 ]/g, '')
+        .replace(/[^a-z0-9 ]/g, "")
         // Split at instances of 1 or more adjacent whitespaces
         .split(/\s+/)
     )
@@ -127,16 +127,16 @@ async function smartSearch<SpecificModel extends StandardModel>({
       // Remove field values that are not defined or that are not strings because we can't use them for score calculation
       const values = fields
         .map((field) => row[field])
-        .filter((a) => !!a && typeof a === 'string');
+        .filter((a) => !!a && typeof a === "string");
 
       words.forEach((word) => {
         values.forEach((value) => {
-          if (typeof value === 'string' && value.toLowerCase() === word) {
+          if (typeof value === "string" && value.toLowerCase() === word) {
             score += 1;
           }
 
           if (
-            typeof value === 'string' &&
+            typeof value === "string" &&
             value.toLowerCase().startsWith(word)
           ) {
             score += 0.2;
@@ -160,7 +160,7 @@ async function smartSearch<SpecificModel extends StandardModel>({
   const hasPreviousPage = offset - resultsPerPage >= 0;
 
   return {
-    id: 'search-' + search,
+    id: "search-" + search,
     page: total ? page : 0,
     total,
     hasNextPage,

@@ -1,6 +1,6 @@
-import apolloServer from "../../graphql";
-import nextConnect from "next-connect";
 import { IncomingMessage, ServerResponse } from "http";
+import nextConnect from "next-connect";
+import apolloServer from "../../graphql";
 
 export const config = {
   api: {

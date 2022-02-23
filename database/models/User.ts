@@ -4,8 +4,8 @@ import {
   InferAttributes,
   InferCreationAttributes,
   Model,
-} from 'sequelize';
-import sequelize from '../sequelize';
+} from "sequelize";
+import sequelize from "../sequelize";
 
 export default class User extends Model<
   InferAttributes<User, {}>,
@@ -52,7 +52,7 @@ User.init(
     },
   },
   {
-    tableName: 'User',
+    tableName: "User",
     sequelize,
     paranoid: true,
   }

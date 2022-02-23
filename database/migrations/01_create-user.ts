@@ -1,6 +1,5 @@
 import { DataTypes, QueryInterface } from "sequelize";
 import { MigrationFn } from "umzug";
-import { MigrationFunctionParams } from "./../types";
 
 const up: MigrationFn<QueryInterface> = async function ({
   context: queryInterface,

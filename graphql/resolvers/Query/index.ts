@@ -1,4 +1,4 @@
-import userById from './userById';
+import userById from "./userById";
 
 const Query = {
   userById,

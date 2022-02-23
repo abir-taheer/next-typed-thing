@@ -1,3 +1,4 @@
+import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import {
   ApolloError,
   ApolloServer,
@@ -5,7 +6,6 @@ import {
 } from "apollo-server-micro";
 import resolvers from "./resolvers";
 import typeDefs from "./typeDefs";
-import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 
 const apolloServer = new ApolloServer({
   typeDefs,

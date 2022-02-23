@@ -1,8 +1,6 @@
-import { RunnableMigration, SequelizeStorage, Umzug } from "umzug";
-import sequelize from "./sequelize";
 import path from "path";
-
-require("ts-node/register");
+import { SequelizeStorage, Umzug } from "umzug";
+import sequelize from "./sequelize";
 
 const migrationsPath = path.resolve(__dirname, "migrations");
 
