@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "migrate": "ts-node --skipProject migrate.ts",
+    "migrate": "ts-node migrate.ts up",
     "lint": "next lint"
   },
   "dependencies": {
