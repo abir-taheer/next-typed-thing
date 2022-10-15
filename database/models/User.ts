@@ -12,10 +12,12 @@ export default class User extends Model<
   InferCreationAttributes<User, {}>
 > {
   // id can be undefined during creation when using `autoIncrement`
-  declare id: CreationOptional<number>;
+  declare id: CreationOptional<string>;
   declare firstName: string;
   declare lastName: string;
   declare email: string;
+
+  declare picture: string | null;
 
   // createdAt can be undefined during creation
   declare createdAt: CreationOptional<Date>;
@@ -43,6 +45,10 @@ User.init(
     email: {
       type: new DataTypes.STRING(256),
       allowNull: false,
+    },
+    picture: {
+      type: new DataTypes.TEXT,
+      allowNull: true,
     },
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,

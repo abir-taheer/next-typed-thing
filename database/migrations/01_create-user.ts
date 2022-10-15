@@ -6,7 +6,7 @@ const up: MigrationFn<QueryInterface> = async function ({
 }) {
   await queryInterface.createTable("User", {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
@@ -18,6 +18,14 @@ const up: MigrationFn<QueryInterface> = async function ({
     lastName: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    picture: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     createdAt: {
       type: DataTypes.DATE,
